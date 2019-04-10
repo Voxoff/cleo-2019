@@ -60,7 +60,7 @@ class View
 
   def another?(class_name)
     puts "Would you like to add another #{class_name}? (Y/N)"
-    get_input.downcase.include?('y') ? true : false
+    get_input.downcase.include?('y')
   end
 
   def new_change

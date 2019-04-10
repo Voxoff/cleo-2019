@@ -43,12 +43,6 @@ RSpec.describe MachineController do
     end
   end
 
-  describe '#display_items' do
-    it 'should display item' do
-      controller.display_items
-    end
-  end
-
   def silence_output
     @original_stdout = $stdout
     $stdout = File.open(File::NULL, 'w')
