@@ -1,5 +1,6 @@
 require_relative './models/coin'
 require_relative './models/item'
+require_relative './models/transaction'
 require_relative './models/vending_machine'
 require_relative './controllers/machine_controller'
 require_relative './views/view'

@@ -38,6 +38,7 @@ class MachineController
 
   def select(input)
     selected_item = Item.all[input - 1]
+    @transaction = Transaction.new(item: selected_item)
     insert_change = wait_for_coin(selected_item)
     return_change = Coin.calculate_change(insert_change - selected_item.price)
     @view.dispense(return_change, selected_item)
@@ -59,6 +60,7 @@ class MachineController
     if denominations.any?(coin)
       @money_inserted += coin
       Coin.find_by_denomination(coin).insert
+      @transaction.coins << coin
     else
       @view.try_again
       @view.acceptable_denominations(denominations)
