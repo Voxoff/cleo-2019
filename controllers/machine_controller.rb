@@ -1,5 +1,5 @@
 class MachineController
-  def initialize(attributes = {})
+  def initialize(view:, machine:)
     @view = attributes[:view]
     @vending_machine = attributes[:vending_machine]
     @online = true

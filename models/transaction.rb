@@ -12,7 +12,7 @@ class Transaction
   end
 
   def self.three_most_popular
+    require 'pry'; binding.pry
     all.group_by(&:item).max_by(3) { |_, v| v.count }
-    all.max_by {|t| t.item.count}
   end
 end
